@@ -1,10 +1,28 @@
-/* Contenedor general */
+/* Fondo con gradiente azul animado */
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0077b6, #00b4d8, #90e0ef);
+    background-size: 300% 300%;
+    animation: gradientAnimation 12s ease infinite;
+}
+
+/* Animación del gradiente */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor general centrado */
 .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
-    font-family: Arial, sans-serif;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
 }
 
 /* Logo */
@@ -16,11 +34,12 @@
 
 /* Formulario */
 .login-form {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 25px 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     width: 320px;
+    backdrop-filter: blur(5px);
 }
 
 /* Grupo de campos */
@@ -33,28 +52,29 @@
     display: block;
     margin-bottom: 6px;
     font-weight: bold;
-    color: #333;
+    color: #023e8a;
 }
 
 /* Inputs */
 .form-group input {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
     outline: none;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus {
-    border-color: #4a90e2;
+    border-color: #0077b6;
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.4);
 }
 
 /* Botón */
 .btn-submit {
     width: 100%;
     padding: 10px;
-    background-color: #4a90e2;
+    background-color: #0077b6;
     border: none;
     color: white;
     font-weight: bold;
@@ -64,10 +84,10 @@
 }
 
 .btn-submit:disabled {
-    background-color: #ccc;
+    background-color: #a9d6e5;
     cursor: not-allowed;
 }
 
 .btn-submit:hover:not(:disabled) {
-    background-color: #357ab8;
+    background-color: #023e8a;
 }
