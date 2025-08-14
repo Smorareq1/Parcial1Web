@@ -18,12 +18,23 @@ export default function LoginForm({ Login }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (!canSubmit) return
+
+        const data = {
+            clientCode: clientCode.trim(),
+            usuario: usuario.trim(),
+            password: password.trim(),
+        }
+
+        // Mostrar alerta con los datos enviados
+        alert(
+            `Datos enviados:\n` +
+            `Código de cliente: ${data.clientCode}\n` +
+            `Usuario: ${data.usuario}\n` +
+            `Password: ${data.password}`
+        )
+
         if (typeof Login === 'function') {
-            Login({
-                clientCode: clientCode.trim(),
-                usuario: usuario.trim(),
-                password: password.trim(),
-            })
+            Login(data)
         }
     }
 
